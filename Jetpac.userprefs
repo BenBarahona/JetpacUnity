@@ -1,10 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BorderScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerShoot.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="19" Column="39" />
-      <File FileName="Assets/Scripts/PlatformScript.cs" Line="24" Column="10" />
-      <File FileName="Assets/Scripts/BorderScript.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/PlayerShoot.cs" Line="48" Column="57" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="69" Column="6" />
+      <File FileName="../SurvivalShooter/Assets/Scripts/Player/PlayerShooting.cs" Line="53" Column="3" />
+      <File FileName="Assets/Scripts/PlatformScript.cs" Line="5" Column="2" />
+      <File FileName="Assets/Scripts/LaserScript.cs" Line="29" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

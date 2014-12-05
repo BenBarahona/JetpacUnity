@@ -19,10 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Shoot();
-        }
+
     }
 
     void FixedUpdate()
@@ -50,7 +47,7 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetBool("IsWalking", (isTouchingGround && horizontal != 0));
-        anim.SetBool("IsFlying", !isTouchingGround);
+        anim.SetBool("IsFlying", !isTouchingGround || Mathf.Abs(rigidbody2D.velocity.y) >= 1);
 
         transform.localScale = localScale;
     }
@@ -70,10 +67,4 @@ public class PlayerController : MonoBehaviour
             isTouchingGround = false;
         }
     }
-
-    void Shoot()
-    {
-
-    }
-
 }
