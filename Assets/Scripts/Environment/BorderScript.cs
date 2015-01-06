@@ -5,11 +5,6 @@ public class BorderScript : MonoBehaviour
 {
     public float offset;
 
-    void Awake()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         Vector3 newPosition = other.gameObject.transform.position;

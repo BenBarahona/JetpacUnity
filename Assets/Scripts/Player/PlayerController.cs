@@ -7,19 +7,22 @@ public class PlayerController : MonoBehaviour
 
     bool isTouchingGround;
     bool isWalking;
-    float scale;
     Animator anim;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
-        scale = transform.localScale.x;
     }
 	
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void Die()
+    {
+        
     }
 
     void FixedUpdate()
@@ -37,19 +40,16 @@ public class PlayerController : MonoBehaviour
 
         rigidbody2D.velocity = velocity;
 
-        Vector3 localScale = transform.localScale;
-        if (horizontal < 0)
+        if (horizontal < 0 && transform.right.x == 1)
         {
-            localScale.x = -scale;
-        } else if (horizontal > 0)
+            transform.RotateAround(transform.position, Vector3.up, -180);
+        } else if (horizontal > 0 && transform.right.x == -1)
         {
-            localScale.x = scale;
+            transform.RotateAround(transform.position, Vector3.up, 180);
         }
 
         anim.SetBool("IsWalking", (isTouchingGround && horizontal != 0));
         anim.SetBool("IsFlying", !isTouchingGround || Mathf.Abs(rigidbody2D.velocity.y) >= 1);
-
-        transform.localScale = localScale;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -67,4 +67,6 @@ public class PlayerController : MonoBehaviour
             isTouchingGround = false;
         }
     }
+
+
 }
