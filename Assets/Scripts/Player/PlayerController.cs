@@ -35,10 +35,10 @@ public class PlayerController : MonoBehaviour
 
     void Move(float vertical, float horizontal)
     {
-        vertical = vertical <= 0 ? rigidbody2D.velocity.y : vertical * speed;
+        vertical = vertical <= 0 ? GetComponent<Rigidbody2D>().velocity.y : vertical * speed;
         Vector2 velocity = new Vector2(horizontal * speed, vertical);
 
-        rigidbody2D.velocity = velocity;
+        GetComponent<Rigidbody2D>().velocity = velocity;
 
         if (horizontal < 0 && transform.right.x == 1)
         {
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetBool("IsWalking", (isTouchingGround && horizontal != 0));
-        anim.SetBool("IsFlying", !isTouchingGround || Mathf.Abs(rigidbody2D.velocity.y) >= 1);
+        anim.SetBool("IsFlying", !isTouchingGround || Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y) >= 1);
     }
 
     void OnCollisionEnter2D(Collision2D other)

@@ -9,7 +9,7 @@ public class Meteor : MonoBehaviour
     {
         Vector3 direction = transform.right;
         direction.y = Random.Range(-1f, 0f);
-        rigidbody2D.velocity = direction.normalized * speed;
+        GetComponent<Rigidbody2D>().velocity = direction.normalized * speed;
     }
 
 }

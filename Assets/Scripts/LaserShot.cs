@@ -12,8 +12,8 @@ public class LaserShot : MonoBehaviour
     {
         gc = GameObject.Find("GameControllerObject").GetComponent<GameController>();
 
-        rigidbody2D.angularVelocity = -720f;
-        rigidbody2D.velocity = transform.right * speed;
+        GetComponent<Rigidbody2D>().angularVelocity = -720f;
+        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
         Destroy(gameObject, timeUntilDeath);
     }
 
